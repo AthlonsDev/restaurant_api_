@@ -9,6 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "algokit": "^0.0.1",
     "algosdk": "^2.7.0",
     "cors": "^2.8.5",
     "eslint": "^8.57.0",
