@@ -23,6 +23,8 @@ export const generateDublinWeatherData = (): WeatherData => {
     wind: faker.number.int({ min: 2, max: 78 }),
     rain: faker.number.int({ min: 65, max: 75 }),
     };
+
+    storeWeatherData(generatedWeatherData).catch(console.error)
     
     return generatedWeatherData;
     };

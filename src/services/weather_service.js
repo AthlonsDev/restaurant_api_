@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.generateDublinWeatherData = exports.generateLondonWeatherData = void 0;
 const faker_1 = require("@faker-js/faker");
+const helpers_1 = require("../helpers/helpers");
 const generateLondonWeatherData = () => {
     const generatedWeatherData = {
         city: "London",
@@ -10,6 +11,7 @@ const generateLondonWeatherData = () => {
         wind: faker_1.faker.number.int({ min: 2, max: 78 }),
         rain: faker_1.faker.number.int({ min: 65, max: 75 }),
     };
+    (0, helpers_1.storeWeatherData)(generatedWeatherData).catch(console.error);
     return generatedWeatherData;
 };
 exports.generateLondonWeatherData = generateLondonWeatherData;
@@ -21,6 +23,7 @@ const generateDublinWeatherData = () => {
         wind: faker_1.faker.number.int({ min: 2, max: 78 }),
         rain: faker_1.faker.number.int({ min: 65, max: 75 }),
     };
+    (0, helpers_1.storeWeatherData)(generatedWeatherData).catch(console.error);
     return generatedWeatherData;
 };
 exports.generateDublinWeatherData = generateDublinWeatherData;
