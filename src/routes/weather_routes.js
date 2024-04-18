@@ -7,5 +7,5 @@ const express_1 = __importDefault(require("express"));
 const weather_controllers_js_1 = require("../controllers/weather_controllers.js");
 const validators_js_1 = require("../middleware/validators.js");
 const router = express_1.default.Router();
-router.get("/:city", validators_js_1.validateCityName, weather_controllers_js_1.getWeatherData);
+router.get("/:food", validators_js_1.validateCityName, weather_controllers_js_1.getFoodData);
 exports.default = router;

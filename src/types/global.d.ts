@@ -1,7 +1,12 @@
-interface WeatherData {
-    city: string;
-    temperature: number;
-    humidity: number;
-    wind: number;
-    rain: number;
+import internal from "stream";
+
+interface FoodData {
+    food: string;
+    weight: number;
+    calories: number;
+    price: number;
+    availability:number,
+    delivery:string,
+    time_to_prepare: number,
+
 }

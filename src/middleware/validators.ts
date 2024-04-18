@@ -1,6 +1,6 @@
 import { param } from "express-validator";
 
-export const validateCityName = param("city")
+export const validateCityName = param("food")
     .isString()
-    .isIn(["london", "dublin"])
-    .withMessage("City name must be either london or dublin");
+    .isIn(["lasagna", "pizza", "bolognese", "carbonara", "salad", "ravioli"])
+    .withMessage("The selected dish is not available");

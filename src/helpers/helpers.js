@@ -12,10 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.storeWeatherData = void 0;
+exports.storeFoodData = void 0;
 const algosdk_1 = __importDefault(require("algosdk"));
 const config_js_1 = require("../config/config.js");
-const storeWeatherData = (data) => __awaiter(void 0, void 0, void 0, function* () {
+const storeFoodData = (data) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const client = (0, config_js_1.getClient)();
         const account = (0, config_js_1.getAccount)();
@@ -36,4 +36,4 @@ const storeWeatherData = (data) => __awaiter(void 0, void 0, void 0, function* (
         console.error("Failed to store weather data:", error);
     }
 });
-exports.storeWeatherData = storeWeatherData;
+exports.storeFoodData = storeFoodData;

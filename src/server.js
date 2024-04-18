@@ -10,7 +10,7 @@ const app = (0, express_1.default)();
 const PORT = 3000;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-app.use("/api/weather", weather_routes_js_1.default);
+app.use("/api/food", weather_routes_js_1.default);
 app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`);
 });

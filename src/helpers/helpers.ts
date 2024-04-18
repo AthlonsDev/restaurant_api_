@@ -1,6 +1,7 @@
 import algosdk from "algosdk";
 import { getClient, getAccount } from "../config/config.js";
-export const storeWeatherData = async (data: WeatherData): Promise<void> => {
+import { FoodData } from "../types/global.js";
+export const storeFoodData = async (data: FoodData): Promise<void> => {
 try {
     const client = getClient();
     const account = getAccount();

@@ -1,11 +1,16 @@
 import { Request, Response } from "express";
 import {
-generateDublinWeatherData,
-generateLondonWeatherData,
+generateLasagnaData,
+generateBologneseData,
+generateCarbonaraData,
+generatePizzaData,
+generateRavioliData,
+generateSaladData
 } from "../services/weather_service.js";
 import { validationResult } from "express-validator";
+import { FoodData } from "../types/global.js";
 
-export const getWeatherData = async (req: Request, res: Response) => {
+export const getFoodData = async (req: Request, res: Response) => {
     // Check if there are any validation errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -17,24 +22,37 @@ export const getWeatherData = async (req: Request, res: Response) => {
     // We will use a try catch block to catch any errors
     try {
     // Get the city param from the request
-        const { city } = req.params;
-        console.log(city);
+        const { food } = req.params;
+        console.log(food);
 
-        let finalWeatherData: WeatherData | undefined = undefined;
+        let finalFoodData: FoodData | undefined = undefined;
 
-        if (city === "london") {
-            console.log(generateLondonWeatherData());
-            finalWeatherData = generateLondonWeatherData();
-        } else if (city === "dublin") {
-            finalWeatherData = generateDublinWeatherData();
-        } else {
+        if (food === "lasagna") {
+            console.log(generateLasagnaData());
+            finalFoodData = generateLasagnaData();
+        } else if (food === "pizza") {
+            finalFoodData = generatePizzaData();
+        }
+        else if (food === "bolognese"){
+            finalFoodData = generateBologneseData();
+        }
+        else if (food === "carbonara"){
+            finalFoodData = generateCarbonaraData();
+        }
+        else if (food === "salad"){
+            finalFoodData = generateSaladData();
+        }
+        else if (food === "ravioli"){
+            finalFoodData = generateRavioliData();
+        }
+        else {
             // If the city is not london or dublin, we will throw an error
-            res.status(404).send("City not found");
+            res.status(404).send("Food not Available");
         }
 
         // We will return the weather data as JSON
-        if (finalWeatherData) {
-            res.status(200).json(finalWeatherData);
+        if (finalFoodData) {
+            res.status(200).json(finalFoodData);
         }
 
     } catch (error) {
