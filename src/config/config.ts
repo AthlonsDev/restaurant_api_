@@ -4,8 +4,8 @@ const algodToken = "a".repeat(64);
 const server: string = "http://localhost";
 const port: string = "4001";
 
-const mnemonic: string =
-"spawn cheese involve stomach drive else side can glad chaos fame embody move harbor boy group game forget demise trouble first lonely card absent valid";
+const mnemonic: string ="cry pilot gospel poverty analyst improve sun spider degree hip like order note bracket proud proof family stuff catch amazing trumpet snap elbow abandon test"
+// "spawn cheese involve stomach drive else side can glad chaos fame embody move harbor boy group game forget demise trouble first lonely card absent valid";
 
 export function getClient(): algosdk.Algodv2 {
     let client = new algosdk.Algodv2(algodToken, server, port);
