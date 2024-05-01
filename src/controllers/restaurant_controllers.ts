@@ -21,20 +21,20 @@ export const getFoodData = async (req: Request, res: Response) => {
 
     // We will use a try catch block to catch any errors
     try {
-    // Get the city param from the request
+    // Get the food param from the request
         const { food } = req.params;
         console.log(food);
 
-        let finalFoodData: FoodData | undefined = undefined;
+        let finalFoodData: FoodData | undefined = undefined; // We will store the final data here
 
-        if (food === "lasagna") {
-            console.log(generateLasagnaData());
-            finalFoodData = generateLasagnaData();
+        if (food === "lasagna") { // If the food is lasagna, we will generate lasagna data
+            console.log(generateLasagnaData()); // Log the data to the console
+            finalFoodData = generateLasagnaData(); // Store the data in finalFoodData
         } else if (food === "pizza") {
-            finalFoodData = generatePizzaData();
+            finalFoodData = generatePizzaData(); // otherwise if the food is pizza, we will generate pizza data
         }
         else if (food === "bolognese"){
-            finalFoodData = generateBologneseData();
+            finalFoodData = generateBologneseData(); // if the food is bolognese, we will generate bolognese data
         }
         else if (food === "carbonara"){
             finalFoodData = generateCarbonaraData();
@@ -46,7 +46,7 @@ export const getFoodData = async (req: Request, res: Response) => {
             finalFoodData = generateRavioliData();
         }
         else {
-            // If the city is not london or dublin, we will throw an error
+            // If input is not recognized, it will throw an error
             res.status(404).send("Food not Available");
         }
 
