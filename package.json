@@ -1,7 +1,7 @@
 {
-  "name": "weather_api_week_5",
+  "name": "restaurant_api",
   "version": "1.0.0",
-  "description": "The New Weather API",
+  "description": "The Restaurant Weather API",
   "engines": {
     "node": ">= 18.2 < 21"
   },

@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getFoodData = void 0;
-const weather_service_js_1 = require("../services/weather_service.js");
+const restaurant_service_js_1 = require("../services/restaurant_service.js");
 const express_validator_1 = require("express-validator");
 const getFoodData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // Check if there are any validation errors
@@ -27,23 +27,23 @@ const getFoodData = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         console.log(food);
         let finalFoodData = undefined;
         if (food === "lasagna") {
-            console.log((0, weather_service_js_1.generateLasagnaData)());
-            finalFoodData = (0, weather_service_js_1.generateLasagnaData)();
+            console.log((0, restaurant_service_js_1.generateLasagnaData)());
+            finalFoodData = (0, restaurant_service_js_1.generateLasagnaData)();
         }
         else if (food === "pizza") {
-            finalFoodData = (0, weather_service_js_1.generatePizzaData)();
+            finalFoodData = (0, restaurant_service_js_1.generatePizzaData)();
         }
         else if (food === "bolognese") {
-            finalFoodData = (0, weather_service_js_1.generateBologneseData)();
+            finalFoodData = (0, restaurant_service_js_1.generateBologneseData)();
         }
         else if (food === "carbonara") {
-            finalFoodData = (0, weather_service_js_1.generateCarbonaraData)();
+            finalFoodData = (0, restaurant_service_js_1.generateCarbonaraData)();
         }
         else if (food === "salad") {
-            finalFoodData = (0, weather_service_js_1.generateSaladData)();
+            finalFoodData = (0, restaurant_service_js_1.generateSaladData)();
         }
         else if (food === "ravioli") {
-            finalFoodData = (0, weather_service_js_1.generateRavioliData)();
+            finalFoodData = (0, restaurant_service_js_1.generateRavioliData)();
         }
         else {
             // If the city is not london or dublin, we will throw an error

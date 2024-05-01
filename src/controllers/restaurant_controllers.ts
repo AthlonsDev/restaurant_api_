@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import {
-generateLasagnaData,
-generateBologneseData,
-generateCarbonaraData,
-generatePizzaData,
-generateRavioliData,
-generateSaladData
-} from "../services/weather_service.js";
+    generateLasagnaData,
+    generateBologneseData,
+    generateCarbonaraData,
+    generatePizzaData,
+    generateRavioliData,
+    generateSaladData
+} from "../services/restaurant_service.js";
 import { validationResult } from "express-validator";
 import { FoodData } from "../types/global.js";
 
@@ -50,7 +50,7 @@ export const getFoodData = async (req: Request, res: Response) => {
             res.status(404).send("Food not Available");
         }
 
-        // We will return the weather data as JSON
+        // We will return the data as JSON
         if (finalFoodData) {
             res.status(200).json(finalFoodData);
         }
